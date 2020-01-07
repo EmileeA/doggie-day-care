@@ -5,7 +5,7 @@ import './App.scss';
 import dogsData from '../helpers/data/dogsData';
 import DogPen from '../components/DogPen/DogPen';
 import employeesData from '../helpers/data/employeesData';
-import StaffRoom from '../components/StaffRoom/StaffRoom.js';
+import StaffRoom from '../components/StaffRoom/StaffRoom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends React.Component {
