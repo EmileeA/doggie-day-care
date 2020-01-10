@@ -9,7 +9,7 @@ class Employee extends React.Component {
   render() {
     const { employee } = this.props;
     return (
-      <div className="card col-3 m-3">
+      <div className="card col-3 m-2">
         <div className="card-body">
           <h5 className="card-title">{employee.firstName} {employee.lastName}</h5>
           <p className="card-text">{employee.phoneNumber}</p>
