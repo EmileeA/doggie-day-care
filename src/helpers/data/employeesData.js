@@ -42,6 +42,5 @@ const getAllEmployees = () => new Promise((resolve, reject) => {
     });
 });
 
-const getEmployeeById = (employeeId) => axios.get(`${baseUrl}/employees/${employeeId}.json`);
 
-export default { getAllEmployees, getEmployeeById };
+export default { getAllEmployees };
