@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 
 const walkShape = PropTypes.shape({
-  id: PropTypes.string.isRequired,
-  dogId: PropTypes.string.isRequired,
-  employeeId: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
+  id: PropTypes.string.string,
+  dogId: PropTypes.string.string,
+  employeeId: PropTypes.string.string,
+  date: PropTypes.string.string,
 });
 
 export default { walkShape };

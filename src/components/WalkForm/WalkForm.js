@@ -39,19 +39,25 @@ class WalkForm extends React.Component {
 
   componentDidUpdate(prevProps) {
     if ((prevProps.walkToEdit.id !== this.props.walkToEdit.id) && this.props.editMode) {
-      this.setState({ dogId: this.props.walkToEdit.dogId, employeeId: this.props.walkToEdit.employeeId, date:
-      this.props.walkToEdit.date })
-    };
+      this.setState({
+        dogId: this.props.walkToEdit.dogId,
+        employeeId: this.props.walkToEdit.employeeId,
+        date:
+      this.props.walkToEdit.date,
+      });
+    }
   }
 
   updateWalkEvent = (e) => {
     e.preventDefault();
-    const { updateWalk, walkToEdit, closeEditMode, closeForm } = this.props;
+    const {
+      updateWalk, walkToEdit, closeEditMode, closeForm,
+    } = this.props;
     const updatedWalk = {
       dogId: this.state.dogId,
       employeeId: this.state.employeeId,
       date: this.state.date,
-    }
+    };
     updateWalk(walkToEdit.id, updatedWalk);
     closeEditMode();
     closeForm();
@@ -152,7 +158,6 @@ class WalkForm extends React.Component {
                     (editMode) ? (<button className='btn btn-dark' onClick={this.updateWalkEvent}>Update</button>) : (<button className="btn btn-dark" onClick= {this.saveWalkEvent}>Save</button>)
                   }
                 <button className="btn btn-dark" onClick={this.props.closeForm}>Close</button>
-          <button className="btn btn-dark" onClick= {this.props.closeForm}>Close</button>
         </div>
       </div>
       </div>
