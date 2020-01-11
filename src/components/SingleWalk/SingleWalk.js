@@ -1,8 +1,5 @@
 import React from 'react';
-import PropTyles from 'prop-types';
-import walkShape from '../../helpers/propz/walkShape';
-import dogsData from '../../helpers/data/dogsData';
-import employeeData from '../../helpers/data/employeesData';
+import PropTypes from 'prop-types';
 import walksWithDataShape from '../../helpers/propz/walksWithDataShape';
 
 class SingleWalk extends React.Component {
@@ -53,7 +50,7 @@ render() {
 
 
   return (
-  <div className="card col-3 m-3">
+  <div className="card col-5 m-3">
     <div className="card-body">
       <h5 className="card-title">{walk.dogName}</h5>
       <p className="card-text">{walk.employeeName}</p>

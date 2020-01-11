@@ -24,4 +24,6 @@ const getAllWalks = () => new Promise((resolve, reject) => {
 
 const saveWalk = (walkInfo) => axios.post(`${baseUrl}/walks.json`, walkInfo);
 
-export default { getAllWalks, saveWalk };
+const updateWalk = (walkId, newWalkInfo) => axios.put(`$baseUrl}/walks/${walkId}.json`, newWalkInfo);
+
+export default { getAllWalks, saveWalk, updateWalk };
