@@ -7,6 +7,7 @@ class SingleWalk extends React.Component {
     walksWithData: walksWithDataShape.walksWithDataShape,
     setEditMode: PropTypes.func,
     setWalkToEdit: PropTypes.func,
+    delete: PropTypes.func,
   }
 
 
@@ -17,37 +18,14 @@ setEditMode = (e) => {
   setWalkToEdit(walk);
 }
 
-
-// componentDidMount() {
-//   this.getDog();
-//   this.getEmployee();
-// }
-
-// getDog = () => {
-//   const { walk } = this.props;
-//   dogsData.getDogById(walk.dogId)
-//     .then((dog) => {
-//       const dogName = dog.data.name;
-//       this.ListeningStateChangedEvent({ dogName });
-//     })
-//     .catch((error) => console.error(error));
-// }
-
-// getEmployee = () => {
-//   const { walk } = this.props;
-//   employeeData.getEmployeeById(walk.employeeId)
-//     .then((employee) => {
-//       const employeeFirstName = employee.data.firstName;
-//       const employeeLastName = employee.data.lastName;
-//       const employeeName = `${employeeFirstName} ${employeeLastName}`;
-//       this.ListeningStateChangedEvent({ employeeName });
-//     })
-//     .catch((error) => console.error(error));
-// }
+deleteWalkEvent = (e) => {
+  e.preventDefault();
+  const { deleteWalk, walk } = this.props;
+  deleteWalk(walk.id);
+}
 
 render() {
   const { walk } = this.props;
-
 
   return (
   <div className="card col-5 m-3">
@@ -57,7 +35,7 @@ render() {
       <p className="card-text">{walk.date}</p>
     </div>
     <div className="card-footer d-flex justify-content-around">
-      <button className="btn btn-secondary" onClick={() => {}}>Delete</button>
+      <button className="btn btn-secondary" onClick={this.deleteWalkEvent}>Delete</button>
       <button className="btn btn-light" onClick={this.setEditMode}>Edit</button>
     </div>
   </div>
