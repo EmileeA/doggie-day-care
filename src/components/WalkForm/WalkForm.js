@@ -40,6 +40,11 @@ class WalkForm extends React.Component {
 
   employeeChange = (e) => {
     e.preventDefault();
+    this.setState({ employeeId: e.target.value });
+  }
+
+  dateChange = (e) => {
+    e.preventDefault();
     this.setState({ date: e.target.value });
   }
 
