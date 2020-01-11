@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import './Home.scss';
 // Moved this whooollleee fing from App.js to here
@@ -45,6 +46,14 @@ class Home extends React.Component {
       .catch((error) => console.error(error));
   }
 
+  addWalk = (newWalk) => {
+    walksData.saveWalk(newWalk)
+      .then(() => {
+        this.getWalks();
+      })
+      .catch((error) => console.error(error));
+  }
+
   render() {
     return (
       <div>
@@ -53,7 +62,7 @@ class Home extends React.Component {
         <StaffRoom employees={this.state.employees} />
       </div>
       <div className="walksContainer d-flex justify-content-center">
-        <Walks walks={this.state.walks} />
+        <Walks walks={this.state.walks} addWalk={this.addWalk} dogs={this.state.dogs} employees={this.state.employees} />
       </div>
       </div>
     );
