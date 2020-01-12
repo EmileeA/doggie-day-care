@@ -37,6 +37,7 @@ class Home extends React.Component {
       .catch((error) => console.error(error));
   }
 
+
   getWalksWithData = () => {
     let walksWithData = [];
     let dogs = [];
@@ -49,12 +50,14 @@ class Home extends React.Component {
         walksWithData.forEach((walk) => {
           dogs.forEach((dog) => {
             if (dog.id === walk.dogId) {
+              // eslint-disable-next-line no-param-reassign
               walk.dogName = dog.name;
             }
           });
           employees.forEach((employee) => {
             if (employee.id === walk.employeeId) {
               const employeeName = `${employee.firstName} ${employee.lastName}`;
+              // eslint-disable-next-line no-param-reassign
               walk.employeeName = employeeName;
             }
           });
@@ -88,12 +91,13 @@ class Home extends React.Component {
       .catch((error) => console.error(error));
   }
 
+
   render() {
     return (
       <div>
       <div className="row d-flex justify-content-between">
-        <DogPen dogs={this.state.dogs} />
-        <StaffRoom employees={this.state.employees} />
+      <DogPen dogs={this.state.dogs} />
+      <StaffRoom employees={this.state.employees} />
       </div>
       <div className="walksContainer d-flex justify-content-center">
       <Walks walksWithData={this.state.walksWithData} addWalk={this.addWalk} dogs={this.state.dogs} employees={this.state.employees} updateWalk={this.updateWalk} deleteWalk={this.deleteWalk}/>

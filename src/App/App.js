@@ -35,7 +35,7 @@ class App extends React.Component {
       <NavBar authed={authed} />
       <div className="authedContainer">
         {
-          (authed) ? (<Home />) : (<img className="homeDog m-2" src="https://cdn.wallpaper.com/main/styles/fp_922x565/s3/legacy/gallery/17056799/G_Doggy_Style.jpg" alt="King Dog" />)
+          (authed) ? (<Home />) : (<img className="homeDog" src="https://cdn.wallpaper.com/main/styles/fp_922x565/s3/legacy/gallery/17056799/G_Doggy_Style.jpg" alt="King Dog" />)
         }
       </div>
     </div>
