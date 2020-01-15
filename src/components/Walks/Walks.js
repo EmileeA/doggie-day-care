@@ -63,7 +63,8 @@ class Walks extends React.Component {
         employees={this.props.employees}
         editMode={this.state.editMode}
         walkToEdit={this.state.walkToEdit}
-        closeEditMode={this.closeEditMode} />}
+        closeEditMode={this.closeEditMode}
+        updateWalk={this.props.updateWalk} />}
         <div className="walkContainer row d-flex justify-content-center">
           {walkCards}
         </div>
