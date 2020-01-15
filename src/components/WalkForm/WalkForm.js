@@ -121,45 +121,45 @@ class WalkForm extends React.Component {
     return (
       <div className='popup'>
         <div className='inner'>
-          <form className='col-6 offset-3 walkForm'>
-            <div className="form-group">
-              <div className="col-auto my-1">
-                <label className="mr-sm-2" htmlFor="dogSelect">Select Dog</label>
-                <select className="custom-select mr-sm-2" id="dogSelect" onChange={this.dogChange}>
-                  {
-                    (editMode) ? (<option defaultValue={this.state.dogId}>{this.state.dogName}</option>) : (<option defaultValue={this.state.dogId}>Choose...</option>)
-                    }
-                  {dogs.map((dog) => <option key={dog.id} value={dog.id}>{dog.name}</option>)}
-                </select>
-              </div>
-            </div>
-            <div className="form-group">
-              <label className="mr-sm-2" htmlFor="employeeSelect">Select Employee</label>
-              <select className="custom-select mr-sm-2" id="employeeSelect" onChange={this.employeeChange}>
-              {
-                    (editMode) ? (<option defaultValue={this.state.employeeId}>{this.state.employeeName}</option>) : (<option defaultValue>Choose...</option>)
-                    }
-                {employees.map((employee) => <option key={employee.id} value={employee.id}>{employee.firstName} {employee.lastName}</option>)}
-              </select>
-            </div>
-            <div className="form-group">
-              <label htmlFor="date">Enter Date:</label>
-              <input
-              type="date"
-              className="form-control"
-              id="date"
-              value={this.state.date}
-              onChange={this.dateChange}
-              />
-            </div>
-          </form>
-          <div className="justify-content-around row d-flex">
-          {
-                    (editMode) ? (<button className='btn btn-dark' onClick={this.updateWalkEvent}>Update</button>) : (<button className="btn btn-dark" onClick= {this.saveWalkEvent}>Save</button>)
-                  }
-                <button className="btn btn-dark" onClick={this.props.closeForm}>Close</button>
+        <form className='col-6 offset-3 walkForm'>
+        <div className="form-group">
+        <div className="col-auto my-1">
+          <label className="mr-sm-2" htmlFor="dogSelect">Select Dog</label>
+          <select className="custom-select mr-sm-2" id="dogSelect" onChange={this.dogChange}>
+            {
+              (editMode) ? (<option defaultValue={this.state.dogId}>{this.state.dogName}</option>) : (<option defaultValue={this.state.dogId}>Choose...</option>)
+            }
+            {dogs.map((dog) => <option key={dog.id} value={dog.id}>{dog.name}</option>)}
+          </select>
         </div>
-      </div>
+        </div>
+        <div className="form-group">
+          <label className="mr-sm-2" htmlFor="employeeSelect">Select Employee</label>
+          <select className="custom-select mr-sm-2" id="employeeSelect" onChange={this.employeeChange}>
+            {
+              (editMode) ? (<option defaultValue={this.state.employeeId}>{this.state.employeeName}</option>) : (<option defaultValue>Choose...</option>)
+            }
+            {employees.map((employee) => <option key={employee.id} value={employee.id}>{employee.firstName} {employee.lastName}</option>)}
+          </select>
+        </div>
+        <div className="form-group">
+          <label htmlFor="date">Enter Date:</label>
+          <input
+            type="date"
+            className="form-control"
+            id="date"
+            value={this.state.date}
+            onChange={this.dateChange}
+          />
+        </div>
+        </form>
+          <div className="justify-content-around row d-flex">
+            {
+              (editMode) ? (<button className="btn btn-dark" onClick= {this.updateWalkEvent}>Update</button>) : (<button className="btn btn-dark" onClick= {this.saveWalkEvent}>Save</button>)
+            }
+          <button className="btn btn-dark" onClick={this.props.closeForm}>Close</button>
+          </div>
+        </div>
       </div>
     );
   }
